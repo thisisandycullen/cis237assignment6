@@ -33,32 +33,32 @@ namespace cis237Assignment6.Controllers
             string filterActive = "";
 
             decimal minPrice = 0m;
-            decimal maxPrice = 100m;
+            decimal maxPrice = 1000m;
 
-            if (Session["name"] != null && String.IsNullOrWhiteSpace((string)Session["name"]))
+            if (Session["name"] != null && !String.IsNullOrWhiteSpace((string)Session["name"]))
             {
                 filterName = (string)Session["name"];
             }
 
-            if (Session["pack"] != null && String.IsNullOrWhiteSpace((string)Session["pack"]))
+            if (Session["pack"] != null && !String.IsNullOrWhiteSpace((string)Session["pack"]))
             {
                 filterPack = (string)Session["pack"];
             }
 
-            if (Session["minPrice"] != null && String.IsNullOrWhiteSpace((string)Session["minPrice"]))
+            if (Session["minPrice"] != null && !String.IsNullOrWhiteSpace((string)Session["minPrice"]))
             {
                 filterMinPrice = (string)Session["minPrice"];
                 minPrice = Decimal.Parse(filterMinPrice);
 
             }
 
-            if (Session["maxPrice"] != null && String.IsNullOrWhiteSpace((string)Session["maxPrice"]))
+            if (Session["maxPrice"] != null && !String.IsNullOrWhiteSpace((string)Session["maxPrice"]))
             {
                 filterMaxPrice = (string)Session["maxPrice"];
                 maxPrice = Decimal.Parse(filterMaxPrice);
             }
 
-            if (Session["active"] != null && String.IsNullOrWhiteSpace((string)Session["active"]))
+            if (Session["active"] != null && !String.IsNullOrWhiteSpace((string)Session["active"]))
             {
                 filterActive = (string)Session["active"];
             }
