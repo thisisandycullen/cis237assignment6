@@ -208,6 +208,7 @@
       <DependentUpon>BeveragesDbContext.edmx</DependentUpon>
       <LastGenOutput>BeveragesDbContext.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\beverages.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\BeveragesDbContext.edmx">
