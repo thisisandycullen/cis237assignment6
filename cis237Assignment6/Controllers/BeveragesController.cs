@@ -49,7 +49,6 @@ namespace cis237Assignment6.Controllers
             {
                 filterMinPrice = (string)Session["minPrice"];
                 minPrice = Decimal.Parse(filterMinPrice);
-
             }
 
             if (Session["maxPrice"] != null && !String.IsNullOrWhiteSpace((string)Session["maxPrice"]))
@@ -67,7 +66,7 @@ namespace cis237Assignment6.Controllers
             //ONLY THIS TIME SEND IN MORE LAMBDA EXPRESSIONS TO NARROW IT DOWN FURTHER.
             IEnumerable<Beverage> filtered = BeveragesToSearch.Where(beverage => beverage.price >= minPrice &&
                                                                                  beverage.price <= maxPrice &&
-                                                                                 beverage.name.Contains(filterName));
+                                                                                 beverage.name.Contains(filterName)); //TODO: add active filter check
 
             //CONVERT THE DATABASE SET TO A LIST NOW THAT THE QUERY WORK IS DONE ON IT.
             IEnumerable<Beverage> finalFiltered = filtered.ToList();

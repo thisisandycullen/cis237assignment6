@@ -27,7 +27,14 @@
                 @Html.TextBox("maxPrice", (string)ViewBag.filterMaxPrice);
             
                 <label for="active">Active</label>
-                @Html.TextBox("active", (string)ViewBag.filterActive);
+            
+                 <select name = "active">
+                  <option value = -1>Any</option>
+                  <option value = 0>Active</option>
+                  <option value = 1>Inactive</option>
+                 </select> 
+            
+                //@Html.TextBox("active", (string)ViewBag.filterActive);
             
                 <br />
                 <input type="submit" value="Filter" class="btn btn-info pull-right" />
