@@ -45,7 +45,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
@@ -53,4 +54,25 @@
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
+
+    @*Failed attempt at Extra Credit:
+
+        <button id="delete-button">Delete</button>
+        <div id="dialog" title="Delete item" style="display: none;">
+            <p>
+                Delete this item from the database?
+                <div>
+                    <button id="yes-button">Yes</button>
+                    <button id="no-button">No</button>
+                </div>
+            </p>
+        </div>
+
+        <span id="result"></span>*@
+
+    @*@section Scripts
+            {
+            @Scripts.Render("~/Scripts/delete_item.js")
+        }*@
+
 </div>

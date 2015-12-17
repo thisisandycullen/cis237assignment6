@@ -2,7 +2,7 @@
 
 ## Due 12-17-2015
 
-## Author
+## Author - Andy Cullen
 
 ## Description
 
@@ -97,6 +97,10 @@ This one is okay, and it is from Microsoft:
 
 ## Outside Resources Used
 
+In class work (InClass6)
+
 ## Known Problems, Issues, And/Or Errors in the Program
+
+I tried to get the javascript dialog working, but to no avail. I feel like I was close. Some of the code I used is commented out in the Delete view.
 
 

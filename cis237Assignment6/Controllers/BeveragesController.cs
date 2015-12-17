@@ -1,4 +1,8 @@
-﻿using System;
+﻿//ANDY CULLEN
+//CIS 237
+//ASSIGNMENT 6
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -35,6 +39,7 @@ namespace cis237Assignment6.Controllers
             decimal minPrice = 0m;
             decimal maxPrice = 1000m;
 
+            //If sessions for each textbox/ddlist are not empty, set them to filter variables
             if (Session["name"] != null && !String.IsNullOrWhiteSpace((string)Session["name"]))
             {
                 filterName = (string)Session["name"];
@@ -66,7 +71,11 @@ namespace cis237Assignment6.Controllers
             //ONLY THIS TIME SEND IN MORE LAMBDA EXPRESSIONS TO NARROW IT DOWN FURTHER.
             IEnumerable<Beverage> filtered = BeveragesToSearch.Where(beverage => beverage.price >= minPrice &&
                                                                                  beverage.price <= maxPrice &&
-                                                                                 beverage.name.Contains(filterName)); //TODO: add active filter check
+                                                                                 beverage.name.Contains(filterName) &&
+                                                                                 //check active filter if active or inactive, if "any" do not filter
+                                                                                 filterActive == "active" ? beverage.active == true : 
+                                                                                 filterActive == "inactive" ? beverage.active == false : 
+                                                                                 true);
 
             //CONVERT THE DATABASE SET TO A LIST NOW THAT THE QUERY WORK IS DONE ON IT.
             IEnumerable<Beverage> finalFiltered = filtered.ToList();

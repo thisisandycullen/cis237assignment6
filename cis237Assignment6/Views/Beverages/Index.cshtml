@@ -14,6 +14,7 @@
             {
                 @Html.AntiForgeryToken()
             
+                //Textboxes for user input
                 <label for="name">Name</label>
                 @Html.TextBox("name", (string)ViewBag.filterName);
             
@@ -26,16 +27,15 @@
                 <label for="maxPrice">Max Price</label>
                 @Html.TextBox("maxPrice", (string)ViewBag.filterMaxPrice);
             
+                //drop down list for active status filter
                 <label for="active">Active</label>
             
                  <select name = "active">
-                  <option value = -1>Any</option>
-                  <option value = 0>Active</option>
-                  <option value = 1>Inactive</option>
+                  <option value = "any">Any</option>
+                  <option value = "active">Active</option>
+                  <option value = "inactive">Inactive</option>
                  </select> 
-            
-                //@Html.TextBox("active", (string)ViewBag.filterActive);
-            
+                        
                 <br />
                 <input type="submit" value="Filter" class="btn btn-info pull-right" />
             
